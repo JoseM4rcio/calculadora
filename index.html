@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Calculadora</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora</h1>
+        <div class="calculadora">
+            <form>
+                <input id="num1" type="text"></input>
+                <input id="num2" type="text"></input>
+                <div class="buttons">
+                    <button class="button" type="button" onclick="somar('+')">+</button>
+                    <button class="button" type="button" onclick="sub('-')">-</button>
+                    <button class="button" type="button" onclick="mult('*')">×</button>
+                    <button class="button" type="button" onclick="div('/')">÷</button>
+                </div>
+                <input id="soma" type="text" disabled></input>
+                <button type="reset"><span class="material-icons" style="font-size: 40px;">delete_outline</span></button>
+            </form> 
+        </div>
+    </div>
+
+    <script>
+        function somar() {
+            var num1, num2, soma;
+
+            num1 = parseFloat(document.getElementById("num1").value);
+            num2 = parseFloat(document.getElementById("num2").value);
+
+            soma = num1 + num2;
+
+
+
+
+            document.getElementById("soma").value = soma;
+        }
+
+        function sub() {
+            var num1, num2, sub;
+
+            num1 = parseFloat(document.getElementById("num1").value);
+            num2 = parseFloat(document.getElementById("num2").value);
+
+            sub = num1 - num2;
+
+
+
+            document.getElementById("soma").value = sub;
+        }
+
+        function mult() {
+            var num1, num2, mult;
+
+            num1 = parseFloat(document.getElementById("num1").value);
+            num2 = parseFloat(document.getElementById("num2").value);
+
+            mult = num1 * num2;
+
+
+
+            document.getElementById("soma").value = mult;
+        }
+
+        function div() {
+            var num1, num2, div;
+
+            num1 = parseFloat(document.getElementById("num1").value);
+            num2 = parseFloat(document.getElementById("num2").value);
+
+            div = num1 / num2;
+
+
+
+            document.getElementById("soma").value = div;
+        }
+    </script>
+</body>
+
+</html>
