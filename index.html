@@ -19,71 +19,50 @@
                 <input id="num1" type="text"></input>
                 <input id="num2" type="text"></input>
                 <div class="buttons">
-                    <button class="button" type="button" onclick="somar('+')">+</button>
-                    <button class="button" type="button" onclick="sub('-')">-</button>
-                    <button class="button" type="button" onclick="mult('*')">×</button>
-                    <button class="button" type="button" onclick="div('/')">÷</button>
+                    <button class="button" type="button" onclick="operacao('+')">+</button>
+                    <button class="button" type="button" onclick="operacao('-')">-</button>
+                    <button class="button" type="button" onclick="operacao('*')">×</button>
+                    <button class="button" type="button" onclick="operacao('/')">÷</button>
                 </div>
-                <input id="soma" type="text" disabled></input>
+                <input id="result" type="number" disabled></input>
                 <button type="reset"><span class="material-icons" style="font-size: 40px;">delete_outline</span></button>
             </form> 
         </div>
     </div>
 
-    <script>
-        function somar() {
-            var num1, num2, soma;
+   <script>
+    function operacao(op) {
+        var num1, num2, soma, sub, mult, div, result, resultado;
 
-            num1 = parseFloat(document.getElementById("num1").value);
-            num2 = parseFloat(document.getElementById("num2").value);
+        num1 = parseFloat(document.getElementById("num1").value);
+        num2 = parseFloat(document.getElementById("num2").value);
 
+        if (op == '+') {
             soma = num1 + num2;
-
-
-
-
-            document.getElementById("soma").value = soma;
+            resultado = soma;
         }
 
-        function sub() {
-            var num1, num2, sub;
-
-            num1 = parseFloat(document.getElementById("num1").value);
-            num2 = parseFloat(document.getElementById("num2").value);
-
+        if (op == '-') {
             sub = num1 - num2;
-
-
-
-            document.getElementById("soma").value = sub;
+            resultado = sub;
         }
 
-        function mult() {
-            var num1, num2, mult;
-
-            num1 = parseFloat(document.getElementById("num1").value);
-            num2 = parseFloat(document.getElementById("num2").value);
-
+        if (op == '*') {
             mult = num1 * num2;
-
-
-
-            document.getElementById("soma").value = mult;
+            resultado = mult;
         }
 
-        function div() {
-            var num1, num2, div;
-
-            num1 = parseFloat(document.getElementById("num1").value);
-            num2 = parseFloat(document.getElementById("num2").value);
-
+        if (op == '/') {
             div = num1 / num2;
-
-
-
-            document.getElementById("soma").value = div;
+            resultado = div;
         }
-    </script>
+
+        document.getElementById("result").value = resultado;
+
+
+    }
+</script>
+
 </body>
 
 </html>
